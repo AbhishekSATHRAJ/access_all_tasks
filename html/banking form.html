@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bank Account Registration Form</title>
+    <style>
+        body {
+          display: flex;
+          justify-content: center;
+          align-items: start;
+          height: 100px;
+        
+        }
+        form {
+          width: 600px;
+          height: 950px;
+          padding: 2px;
+          border-radius: 8px;
+          box-shadow: 5px 2px 10px;
+        }
+        fieldset {
+          padding: 10px;
+          margin: 0%;
+          border: 2px solid silver;
+        }
+        legend {
+          font-weight: bold;
+          margin-bottom: 10px;
+        }
+        input {
+          padding: 2px;
+          margin: 5px;
+        }
+        h1{
+          display:flex;
+          float: right;
+          margin-right: 30px;
+          margin-top: 30px;
+        }
+        h2{
+            display: flex;
+           justify-content: center;
+           background-color: aqua;
+           font-size: 25px;
+        }
+         h3{
+            display: flex;
+            justify-content: center;
+            font-size: 25px;
+            background-color: aqua;
+         }
+         input[type="name"],
+            input[type="email"],
+            input[type="password"],
+            textarea,
+            input[type="date"] {
+                width: calc(100% - 20px);
+                padding: 2px;
+                margin-bottom: 11px;
+                box-sizing: border-box;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+            }
+            label{
+                display: flex;
+                margin-left: 5px;
+            }
+        </style>
+  </head>
+  <body>
+    <fieldset>
+      <legend>Bank Account Registration Form</legend>
+      <form>
+        <img src="https://www.elementfcu.org/wp-content/uploads/2022/06/Element_GreenBanking_LogoColor_0622-1024x1024.png" width="100" height="100"/>
+        <h1>Bank Account Registration Form</h1>
+        <h2>Account Information</h2>
+        <label for="Account type">Account Type</label>
+        <input type="name" id="Account type" name="Account type" />
+        <label for="Currency type">Currency Type</label>
+        <input type="name" id="Currency type" name="Currency type" />
+        <h3>Personal Information</h3>
+        <label for="Firstname">First Name</label>
+        <input type="name" id="Firstname" name="Firstname" />
+        <label for="Lastname">Last Name</label>
+        <input type="name" id="Lastname" name="Lastname" />
+        <label for="phonenumber">Phone Number</label>
+        <input type="number" id="phonenumber" name="phonenumber" pattern="[0-9]{4}-[0-9]{3}-[0-9]{3}"/><br>
+        <label for="Email">Email</label>
+        <input type="name" id="Email" name="Email" />
+        <label for="DOB">Date of Birth</label>
+        <input type="date" id="DOB" name="DOB" />
+        <label for="citizenship">Citizenship</label>
+        <input type="radio" id="citizenship" name="citizenship" />EU Citizen
+        <input type="radio" id="citizenship" name="citizenship" />US Citizen
+        <input type="radio" id="citizenship" name="citizenship" />Others<br>
+        <br>
+        <label for="address">Address</label>
+        <textarea name="address" id="address"></textarea>
+        <label for="occupation">Occupation</label>
+        <input type="name" id="occupation" name="occupation"/>
+        <label for="employername">Employer Name</label>
+        <input type="name" id="employername" name="employername"/>
+        <label for="yesorno">Do you want add joint owner to the bank account?</label>
+        <input type="radio" id="yesorno" name="yesorno"/>Yes
+        <input type="radio" id="yesorno" name="yesorno"/>No
+        <input type="submit" value="Sigin"/>
+        <input type="submit" value="Reset"/>
+        <input type="submit" value="Close" formaction="data:image/jpeg;base64,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" />
+    </form>
+    </fieldset>
+  </body>
+</html>

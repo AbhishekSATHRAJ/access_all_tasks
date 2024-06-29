@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title>Stack overflow-Wikipedia</title>
+        <link rel="stylesheet" href="./styles.css">
+    </head>
+    <body>
+        <h1><a href="https://en.wikipedia.org/wiki/Stack_Overflow"><img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Stack_Overflow.png" title="Stackoverflow" height="100" width="300"/></a><hr></h1>
+        <p>For the website, see <b>Stack Overflow</b>. For other uses, see Stack overflow (disambiguation).
+        In software, a stack overflow occurs if the call stack pointer exceeds the stack bound. The call stack may consist of a limited amount of address space, often determined at the start of the program. The size of the call stack depends on many factors, including the programming language, machine architecture, multi-threading, and amount of available memory. When a program attempts to use more space than is available on the call stack (that is, when it attempts to access memory beyond the call stack's bounds, which is essentially a buffer overflow), the stack is said to overflow, typically resulting in a program crash.[1]</p>
+       <h2>Causes<hr></h2>
+       <p><b>Infinite recursion</b><hr><br>
+        Main article: Infinite recursion<br>
+        The most-common cause of stack overflow is excessively deep or infinite recursion, in which a function calls itself so many times that the space needed to store the variables and information associated with each call is more than can fit on the stack.[2]
+        
+        An example of infinite recursion in C.<br>
+        <pre>int foo() 
+            {
+                 return foo();
+            }</pre><br>
+        The function foo, when it is invoked, continues to invoke itself, allocating additional space on the stack each time, until the stack overflows resulting in a segmentation fault.[2] However, some compilers implement tail-call optimization, allowing infinite recursion of a specific sort—tail recursion—to occur without stack overflow. This works because tail-recursion calls do not take up additional stack space.[3]<br>
+        Some C compiler options will effectively enable tail-call optimization; for example, compiling the above simple program using gcc with -O1 will result in a segmentation fault, but not when using -O2 or -O3, since these optimization levels imply the -foptimize-sibling-calls compiler option.[4] Other languages, such as Scheme, require all implementations to include tail-recursion as part of the language standard.[5]<br>
+     <b><br>Very deep recursion</b><hr><br>
+     A recursive function that terminates in theory but causes a call stack buffer overflow in practice can be fixed by transforming the recursion into a loop and storing the function arguments in an explicit stack (rather than the implicit use of the call stack). This is always possible because the class of primitive recursive functions is equivalent to the class of LOOP computable functions. Consider this example in C++-like pseudocode:<br>
+     A primitive recursive function like the one on the left side can always be transformed into a loop like on the right side.
+
+     A function like the example above on the left would not be a problem in an environment supporting tail-call optimization; however, it is still possible to create a recursive function that may result in a stack overflow in these languages. Consider the example below of two simple integer exponentiation functions.<br>
+     Notice that the function on the left must store in its stack exp number of integers, which will be multiplied when the recursion terminates and the function returns 1. In contrast, the function at the right must only store 3 integers at any time, and computes an intermediary result which is passed to its following invocation. As no other information outside of the current function invocation must be stored, a tail-recursion optimizer can "drop" the prior stack frames, eliminating the possibility of a stack overflow.<br>
+     <b><br>Very large stack variables</b><hr><br>
+     The other major cause of a stack overflow results from an attempt to allocate more memory on the stack than will fit, for example by creating local array variables that are too large. For this reason some authors recommend that arrays larger than a few kilobytes should be allocated dynamically instead of as a local variable.[6]</p>
+    </body>
+</html>
